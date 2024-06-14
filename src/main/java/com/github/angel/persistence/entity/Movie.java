@@ -1,5 +1,6 @@
 package com.github.angel.persistence.entity;
 
+import com.github.angel.utils.Genre;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -22,7 +23,9 @@ public class Movie {
     private String title;
     @Column(nullable = false)
     private String director;
-    private String genre;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false,  name = "genre")
+    private Genre genre;
     @Column(name = "release_year")
     private int releaseYear;
     @OneToMany(targetEntity = Rating.class, fetch = FetchType.EAGER, orphanRemoval = true, mappedBy = "movie")
