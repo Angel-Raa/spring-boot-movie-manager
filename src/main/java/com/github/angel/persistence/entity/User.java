@@ -1,13 +1,10 @@
 package com.github.angel.persistence.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Set;
-
+@ToString(exclude = {"ratings"})
 @Getter
 @Setter
 @AllArgsConstructor
@@ -23,7 +20,7 @@ public class User {
     @Column(nullable = false)
     private String password;
     private String name;
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "user")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     private Set<Rating> ratings;
 
 }

@@ -59,7 +59,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public void delete(Long id) {
-        Movie movie = this.repository.findById(id).orElseThrow(( ) -> new GlobalDefaultException("Not found"));
+        Movie movie = this.repository.findById(id).orElseThrow(( ) -> new GlobalDefaultException("Not found movie"));
         repository.delete(movie);
     }
 }
