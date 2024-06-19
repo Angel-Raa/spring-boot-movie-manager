@@ -37,8 +37,8 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public Movie getById(Long id) {
-        Movie movie = this.repository.findById(id).orElseThrow(( ) -> new GlobalDefaultException("Not found"));
-        return movie;
+        return this.repository.findById(id).orElseThrow(( ) -> new GlobalDefaultException("Not found movies"));
+
     }
 
     @Override
