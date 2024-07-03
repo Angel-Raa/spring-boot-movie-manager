@@ -4,6 +4,7 @@ import com.github.angel.persistence.entity.Movie;
 import com.github.angel.service.MovieService;
 import com.github.angel.utils.Genre;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -33,6 +34,11 @@ public class MovieController {
     @GetMapping(value = "/filter", params = {"title", "genre"})
     public ResponseEntity<List<Movie>> getByTitleAndGenre(@RequestParam(name = "title") String title, @RequestParam(name = "genre") Genre genre) {
         return ResponseEntity.ok(movieService.getAllByGenreAndTitle(genre, title));
+    }
+
+    @GetMapping("/example")
+    public ResponseEntity<String >example(){
+        return new ResponseEntity<>("Hola Mundo", HttpStatus.OK);
     }
 
 }
