@@ -23,3 +23,7 @@ INSERT INTO Movies (title, director, genre, release_year) VALUES ('The Dark Knig
 INSERT INTO Movies (title, director, genre, release_year) VALUES ('Forrest Gump', 'Robert Zemeckis', 'DRAMA', 1994);
 INSERT INTO Movies (title, director, genre, release_year) VALUES ('The Godfather', 'Francis Ford Coppola', 'CRIME', 1972);
 INSERT INTO Movies (title, director, genre, release_year) VALUES ('Inception', 'Christopher Nolan', 'SCIENCE_FICTION', 2010);
+
+
+
+SELECT *FROM Movies
